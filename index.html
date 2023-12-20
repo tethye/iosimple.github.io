@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="card">
+            <form>
+                <label for="name">Full Name:</label> <br>
+                <input pattern="[A-Za-z ]+" id="name" name="name" placeholder="Your name..." required>
+                <br>
+                <label for="email">Email:</label> <br>
+                <input type="email" id="email" name="email" placeholder="example@.." required>
+                <br>
+                <label for="password">Password:</label> <br>
+                <input type="password" id="password" name="password" placeholder="Give a Strong password..." required>
+                <br>
+                <label for="phone">Phone no:</label> <br>
+                <input type="tel" id="phone" name="phone" placeholder="your phone no..." required>
+                <br>
+                <p>Gender</p>
+                <input type="checkbox" id="male" name="gender" value="Male">
+                <label for="male"> Male</label>
+                <input type="checkbox" id="female" name="gender" value="Female">
+                <label for="female"> Female</label><br>
+                <br>
+                
+                <a class="btn-box" onclick="submitItem()"> Submit </a>
+
+            </form>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+    <script>
+        document.getElementById("name").value = sessionStorage.getItem("name");
+        document.getElementById("email").value = sessionStorage.getItem("email");
+        document.getElementById("password").value = sessionStorage.getItem("password");
+        document.getElementById("phone").value = sessionStorage.getItem("phone");
+    </script>
+</body>
+</html>

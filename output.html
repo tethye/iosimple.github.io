@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="card">
+            <form action="" method="">
+                <p>Full Name: <span id="oname"></span></p>
+                
+                <p>Email: <span id="oemail"></span></p>
+                
+                <p>Password: <span id="opass"></span></p>
+
+                <p>Phone no: <span id="ophn"></span></p>
+                
+                <p>Gender: <span id="ogen"></span></p>
+
+                <br>
+            
+
+                <a href="index.html" class="btn-box">BACK</a>
+            </form>
+        </div>
+        
+    </div>
+    
+    <script src="script.js"></script>
+    <script>
+        document.getElementById("oname").innerText = sessionStorage.getItem("name");
+        document.getElementById("oemail").innerText = sessionStorage.getItem("email");
+        document.getElementById("opass").innerText = sessionStorage.getItem("password");
+        document.getElementById("ophn").innerText = sessionStorage.getItem("phone");
+        var selectedGen = sessionStorage.getItem("gender");
+        document.getElementById("ogen").innerText = selectedGen ? selectedGen : "No Gender Selected...";
+        
+        for (var i = 0; i < sessionStorage.length; i++) {
+            var a = sessionStorage.key(i);
+            sessionStorage.removeItem(a);
+        }
+
+    </script>
+</body>
+</html>
